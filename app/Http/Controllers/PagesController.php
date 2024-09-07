@@ -21,4 +21,9 @@ class PagesController extends Controller
     {
         return view('pages.forum');
     }
+
+    public function quiz_farm(): View
+    {
+        return view('pages.quiz_game.farm');
+    }
 }

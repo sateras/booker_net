@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PagesController::class, 'home'])->name('pages.home');
 Route::get('/library', [PagesController::class, 'library'])->name('pages.library');
 Route::get('/forum', [PagesController::class, 'forum'])->name('pages.forum');
+Route::get('/quiz/farm', [PagesController::class, 'quiz_farm'])->name('pages.quiz_farm');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
