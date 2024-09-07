@@ -1,0 +1,458 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*,*:before,*:after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: calc(10px + (6 + 6 * 0.7) * (100vw - 320px) / 1280);
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input,button,textarea{font-family: 'Bahnschrift Light', sans-serif;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+
+/* Video/head/menu */
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.head-video
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 100px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.head-video .logo
+{
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-left: 40px;
+}
+.toggle
+{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: url(https://i.ibb.co/HrfVRcx/menu.png);
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center;
+  cursor: pointer;
+}
+.toggle.active
+{
+  background: url(https://i.ibb.co/rt3HybH/close.png);
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position: center;
+  cursor: pointer;
+}
+.showcase
+{
+  position: relative;
+  right: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: #111;
+  transition: 0.5s;
+  z-index: 2;
+}
+.showcase.active
+{
+  right: 22%;
+}
+
+.showcase video
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+.overlay
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  mix-blend-mode: overlay;
+}
+.text
+{
+  position: relative;
+  z-index: 10;
+  background-color: rgba(17, 17, 17, 0.65);
+  padding: 2% 17% 2% 3%;
+  border-radius: 20px;
+}
+
+#size1{
+    font-family: 'Cascadia Code ExtraLight', sans-serif;
+    font-size: calc(23px + (18 + 18 * 0.7) * (100vw - 320px) / 1280);
+    color: white;
+    
+}
+#size2{
+    font-family: 'Microsoft JhengHei Light', sans-serif;
+    font-size: calc(15px + (5 + 5 * 0.7) * (100vw - 320px) / 1280);
+    color: rgb(101, 101, 101);
+    margin-bottom: 7%;
+}
+
+.text p
+{
+    font-family: 'Microsoft JhengHei Light', sans-serif;
+    font-size: calc(10px + (5 + 5 * 0.7) * (100vw - 320px) / 1280);
+    color: #fff;
+    margin: 20px 0;
+    max-width: 700px;
+    line-height: 1.5em;
+}
+.text a
+{
+  display: inline-block;
+  font-size: 1em;
+  background: #fff;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 7%;
+  color: #111;
+  letter-spacing: 2px;
+  transition: 0.2s;
+}
+.text a:hover
+{
+  letter-spacing: 6px;
+}
+.social
+{
+  position: absolute;
+  z-index: 10;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social li
+{
+  list-style: none;
+  width: 50px;
+}
+.social li a
+{
+  display: inline-block;
+  width: 50px;
+  margin-right: 20px;
+  filter: invert(1);
+  transform: scale(0.5);
+  transition: 0.5s;
+}
+.social li a:hover
+{
+  transform: scale(0.5) translateY(-15px);
+}
+.menu
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 22%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu ul
+{
+  position: relative;
+}
+.menu ul li
+{
+  list-style: none;
+  margin-bottom: 20%;
+}
+.menu ul li a
+{
+  text-decoration: none;
+  font-size:  calc(15px + (6 + 6 * 0.7) * (100vw - 320px) / 1280);
+  color: #111;
+  font-family:'Bahnschrift Light', Arial, sans-serif; 
+}
+.menu ul li a:hover
+{
+  text-decoration: underline;
+}
+
+
+/* Кнопка корзина */
+.cta {
+  border: none;
+  background: none;
+}
+
+.cta span {
+  padding-bottom: 7px;
+  letter-spacing: 4px;
+  font-size: calc(10px + (5 + 5 * 0.7) * (100vw - 320px) / 1280);
+  padding-right: 15px;
+  text-transform: uppercase;
+}
+
+.cta svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active svg {
+  transform: scale(0.9);
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: black;
+  padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+
+#header{
+  width: 100%;
+}
+#font > li{
+  font-family: 'Microsoft JhengHei Light', sans-serif;
+  font-size: calc(10px + (5 + 5 * 0.7) * (100vw - 320px) / 1280);
+}
+.nav-link{
+  color: black;
+}
+.nav-link:hover{
+  color: rgb(116, 104, 104);
+}
+#link{
+  margin-top: 20px;
+}
+#catalog{
+  font-family: 'Yu Gothic UI Light', sans-serif;
+  font-size: calc(15px + (10 + 10 * 0.7) * (100vw - 320px) / 1280);
+}
+.search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5% 5%;
+}
+.search > form{
+  width: 80%;
+}
+.control {
+  display: block;
+  width: 100%;
+  height: calc(1.7rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1;
+  color: #2d2d2e;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #000000;
+  border-radius: 0.25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.control:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.control:active {
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.tovar_list{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+}
+.tovar-box{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 3%;
+  border-radius: 15px;
+  width: 80%;
+  height: 300px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: .3s;
+  color: #000000;
+}
+.tovar-box > div{
+    color: black;
+    border-radius: 7px;
+    padding: 20px;
+    font-size: calc(10px + (5 + 5 * 0.7) * (100vw - 320px) / 1280);
+}
+.tovar-box:hover{
+    transition: .3s;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+.img{
+    margin: 20px 0px 20px 40px;
+    max-width: 150px;
+}
+.a{
+  color: #000000;
+}
+.a:hover{
+    text-decoration: underline;
+}
+.a > a{
+  font-size: calc(10px + (5 + 5 * 0.7) * (100vw - 320px) / 1280);
+  font-family:'Bahnschrift Light', Arial, sans-serif; 
+  color: #000000;
+}
+.a > a:hover{
+  text-decoration: underline;
+}
+p {
+  margin: 0;
+}
+.p1{
+  margin-bottom: 2.5%;
+  font-weight: 100;
+  font-size: calc(8px + (5 + 5 * 0.7) * (100vw - 320px) / 1280);
+  font-family:'Bahnschrift Light', Arial, sans-serif; 
+  color: #5f5e5e;
+}
+.p2{
+  margin-bottom: 10%;
+  font-weight: 700;
+  font-size: calc(10px + (5 + 5 * 0.7) * (100vw - 320px) / 1280);
+  font-family:'Bahnschrift Light', Arial, sans-serif; 
+}
+
+
+
+
+
+@media (max-width: 1000px)
+{
+  .showcase,
+  .showcase header
+  {
+    padding: 40px;
+  }
+  .text h2
+  {
+    font-size: 3em;
+  }
+  .text h3
+  {
+    font-size: 2em;
+  }
+}
+
+
+
+@media screen and (max-width: 1100px){
+  .img{
+    max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 1000px){
+  .img{
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 830px){
+  .img{
+    max-width: 150px;
+  }
+}
+
+@media screen and (max-width: 670px){
+  .tovar{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+  .img{
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 350px){
+  .img{
+    max-width: 110px;
+  }
+}
