@@ -49,4 +49,38 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Book::class)->withPivot('status')->withTimestamps();
     }
+
+    public function friends()
+{
+    return $this->belongsToMany(User::class, 'friendships', 'user_id', 'friend_id')
+                ->withPivot('accepted')
+                ->wherePivot('accepted', true)
+                ->orWhere(function($query) {
+                    $query->where('friend_id', $this->id)
+                          ->where('accepted', true);
+                })
+                ->distinct();
+// return $this->belongsToMany(User::class, 'friendships', 'friend_id', 'user_id')
+//                 ->withPivot('accepted')
+//                 ->wherePivot('accepted', false)
+//                 ->orderBy('pivot_created_at', 'asc');
+}
+
+
+    public function friendRequests()
+    {
+        // return $this->belongsToMany(User::class, 'friendships', 'friend_id', 'user_id')
+        //             ->withPivot('accepted')
+        //             ->wherePivot('accepted', false);
+                    // ->get();
+        return $this->belongsToMany(User::class, 'friendships', 'friend_id', 'user_id')
+                    ->withPivot('accepted')
+                    ->wherePivot('accepted', false)
+                    ->whereNotIn('user_id', function ($query) {
+                        $query->select('user_id')
+                              ->from('friendships')
+                              ->where('friend_id', $this->id)
+                              ->where('accepted', true);
+                    });
+    }
 }

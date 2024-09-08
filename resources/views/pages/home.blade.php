@@ -98,7 +98,7 @@
       </div>
     </a>
 
-    <a href="">
+    <a href="/games">
       <div class="tovar-box" id="img3">
         <div>Игры</div>
       </div>

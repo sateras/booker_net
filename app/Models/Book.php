@@ -12,17 +12,32 @@ class Book extends Model
     protected $fillable = [
         'title',
         'url',
-        'author',
-        'description',
-        'cover_image',
-        'user_id',
-        'is_available',
-        'genre_id',
+        'authors',
+        // 'description',
+        // 'cover_image',
+        // 'user_id',
+        // 'is_available',
+        // 'genre_id',
+        'isbn13',
+        'isbn10',
+        'subtitle',
+        'categories',
+        'thumbnail',
+        'published_year',
+        'average_rating',
+        'num_pages',
+        'ratings_count',
+        'age_limit'
     ];
 
     public function users()
     {
         return $this->belongsToMany(User::class)->withPivot('status')->withTimestamps();
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 
     public function genre()
